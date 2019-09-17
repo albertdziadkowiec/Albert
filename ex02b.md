@@ -12,7 +12,7 @@ Albert Dziadkowiec and Thomas Terrance
 
 
 ## STEP 3. Examine the determinants of the functional dependencies. If any determinant is not a candidate key, the relation is not well formed.
-*Since we have determinants that are not candidate keys we have to use multiple relations which include PET, OWNER, and SERVICE
+* Since we have determinants that are not candidate keys we have to use multiple relations which include PET, OWNER, and SERVICE
 
 #### PET
 
