@@ -20,3 +20,5 @@ FROM ON
 ProjectName, FirstName, LastName, HoursWorked EMPLOYEE AS E JOIN ASSIGNMENT AS A
 E.EmployeeNumber = A.EmployeeNumber JOIN PROJECT AS P ON
 ORDER BY P.ProjectID, A.EmployeeNumber;
+
+SELECT LastName, FirstName FROM customer WHERE CustomerID IN (SELECT DISTINCT CustomerID FROM invoice WHERE total > 300)
