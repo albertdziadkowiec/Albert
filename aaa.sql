@@ -56,7 +56,7 @@ CREATE TABLE `donation` (
 -- Dumping data for table `donation`
 --
 
-INSERT INTO `donation` (`DonationNumber`, `InvoiceNumber`, `DonationAmt`, `Charity`) VALUES
+INSERT INTO `donation` (`DonationNumber`, `DonationAmt`, `Charity`) VALUES
 (1, '$80.71', 'Redcross'),
 (2, '$61.44', 'St. Judes'),
 (3, '$36.44', 'United Way'),
