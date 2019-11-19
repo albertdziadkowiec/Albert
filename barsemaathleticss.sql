@@ -24,3 +24,5 @@ ALTER TABLE `invoice_product`
   insert into Vendor (VendorID, VendorName, ProductName, ProductNumber, Phone) values (18, 'Barsema Athletics', 'AXAS', 1, '914-237-9148');
   insert into Vendor (VendorID, VendorName, ProductName, ProductNumber, Phone) values (19, 'Barsema Athletics', 'AXAS', 1, '914-237-9148');
   insert into Vendor (VendorID, VendorName, ProductName, ProductNumber, Phone) values (20, 'Barsema Athletics', 'AXAS', 1, '914-237-9148');
+
+insert into invoice_product (InvoiceNumber, ProductNumber, Quantity, TotalPrice) values (1, 1, 3, 1, 15);
