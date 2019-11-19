@@ -48,7 +48,6 @@ INSERT INTO `customer` (`CustomerID`, `LastName`, `FirstName`, `EmailAddress`, `
 
 CREATE TABLE `donation` (
   `DonationNumber` int(11) NOT NULL,
-  `InvoiceNumber` int(11) DEFAULT NULL,
   `DonationAmt` varchar(50) DEFAULT NULL,
   `Charity` varchar(14) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -58,26 +57,26 @@ CREATE TABLE `donation` (
 --
 
 INSERT INTO `donation` (`DonationNumber`, `InvoiceNumber`, `DonationAmt`, `Charity`) VALUES
-(1, 17, '$80.71', 'Redcross'),
-(2, 13, '$61.44', 'St. Judes'),
-(3, 20, '$36.44', 'United Way'),
-(4, 1, '$60.41', 'United Way'),
-(5, 8, '$18.25', 'Redcross'),
-(6, 9, '$66.31', 'Salvation Army'),
-(7, 6, '$69.21', 'Salvation Army'),
-(8, 16, '$25.89', 'St. Judes'),
-(9, 3, '$41.33', 'Redcross'),
-(10, 9, '$90.21', 'St. Judes'),
-(11, 6, '$81.73', 'Salvation Army'),
-(12, 1, '$26.18', 'Salvation Army'),
-(13, 2, '$48.11', 'United Way'),
-(14, 19, '$35.88', 'St. Judes'),
-(15, 5, '$69.08', 'Salvation Army'),
-(16, 8, '$52.37', 'Redcross'),
-(17, 14, '$40.11', 'United Way'),
-(18, 4, '$10.15', 'Redcross'),
-(19, 18, '$68.32', 'St. Judes'),
-(20, 14, '$78.74', 'Salvation Army');
+(1, '$80.71', 'Redcross'),
+(2, '$61.44', 'St. Judes'),
+(3, '$36.44', 'United Way'),
+(4, '$60.41', 'United Way'),
+(5, '$18.25', 'Redcross'),
+(6, '$66.31', 'Salvation Army'),
+(7, '$69.21', 'Salvation Army'),
+(8, '$25.89', 'St. Judes'),
+(9, '$41.33', 'Redcross'),
+(10, '$90.21', 'St. Judes'),
+(11, '$81.73', 'Salvation Army'),
+(12, '$26.18', 'Salvation Army'),
+(13, '$48.11', 'United Way'),
+(14, '$35.88', 'St. Judes'),
+(15, '$69.08', 'Salvation Army'),
+(16, '$52.37', 'Redcross'),
+(17, '$40.11', 'United Way'),
+(18, '$10.15', 'Redcross'),
+(19, '$68.32', 'St. Judes'),
+(20, '$78.74', 'Salvation Army');
 
 -- --------------------------------------------------------
 
@@ -132,6 +131,7 @@ INSERT INTO `employee` (`EmployeeID`, `FirstName`, `LastName`, `JobTitle`, `Emai
 CREATE TABLE `invoice` (
   `InvoiceNumber` int(11) NOT NULL,
   `InvoiceDate` date DEFAULT NULL,
+  `DonationNumber` int(11) NULL,
   `PaymentType` varchar(6) DEFAULT NULL,
   `subtotal` decimal(5,2) DEFAULT NULL,
   `tax` decimal(10,2) DEFAULT NULL,
@@ -145,27 +145,27 @@ CREATE TABLE `invoice` (
 -- Dumping data for table `invoice`
 --
 
-INSERT INTO `invoice` (`InvoiceNumber`, `InvoiceDate`, `PaymentType`, `subtotal`, `tax`, `Total`, `EmployeeID`, `CustomerID`, `DiscountApplied`) VALUES
-(1, '2019-01-27', 'Credit', '300.43', '18.93', '319.36', 6, 9, 'No'),
-(2, '2019-03-05', 'Credit', '29.20', '1.84', '31.04', 6, 5, 'Yes'),
-(3, '2018-03-18', 'Cash', '231.54', '14.59', '246.13', 5, 19, 'Yes'),
-(4, '2019-08-15', 'Cash', '71.52', '4.51', '76.03', 1, 5, 'No'),
-(5, '2019-07-07', 'Credit', '139.68', '8.80', '148.48', 3, 15, 'No'),
-(6, '2018-06-26', 'Cash', '229.23', '14.44', '243.67', 3, 13, 'No'),
-(7, '2018-12-26', 'Credit', '405.70', '25.56', '431.26', 10, 9, 'No'),
-(8, '2018-10-06', 'Credit', '314.89', '19.84', '334.73', 4, 13, 'Yes'),
-(9, '2019-05-08', 'Credit', '423.94', '26.71', '450.65', 5, 6, 'Yes'),
-(10, '2019-01-11', 'Cash', '286.01', '18.02', '304.03', 11, 18, 'No'),
-(11, '2018-07-08', 'Credit', '428.15', '26.97', '455.12', 6, 17, 'No'),
-(12, '2018-08-28', 'Cash', '356.76', '22.48', '379.24', 18, 13, 'No'),
-(13, '2019-10-06', 'Credit', '387.22', '24.39', '411.61', 3, 14, 'Yes'),
-(14, '2019-01-05', 'Cash', '37.73', '2.38', '40.11', 9, 16, 'Yes'),
-(15, '2019-04-25', 'Credit', '111.02', '6.99', '118.01', 10, 9, 'No'),
-(16, '2019-07-29', 'Credit', '245.87', '15.49', '261.36', 15, 14, 'No'),
-(17, '2018-12-30', 'Credit', '252.90', '15.93', '268.83', 6, 13, 'Yes'),
-(18, '2019-02-13', 'Cash', '471.68', '29.72', '501.40', 20, 18, 'No'),
-(19, '2018-05-25', 'Cash', '425.10', '26.78', '451.88', 20, 11, 'No'),
-(20, '2018-01-17', 'Cash', '327.12', '20.61', '347.73', 5, 14, 'Yes');
+INSERT INTO `invoice` (`InvoiceNumber`, `InvoiceDate`,`DonationNumber`, `PaymentType`, `subtotal`, `tax`, `Total`, `EmployeeID`, `CustomerID`, `DiscountApplied`) VALUES
+(1, '2019-01-27', 1, 'Credit', '300.43', '18.93', '319.36', 6, 9, 'No'),
+(2, '2019-03-05', 2, 'Credit', '29.20', '1.84', '31.04', 6, 5, 'Yes'),
+(3, '2018-03-18', 3, 'Cash', '231.54', '14.59', '246.13', 5, 19, 'Yes'),
+(4, '2019-08-15', 4, 'Cash', '71.52', '4.51', '76.03', 1, 5, 'No'),
+(5, '2019-07-07', 5, 'Credit', '139.68', '8.80', '148.48', 3, 15, 'No'),
+(6, '2018-06-26', 6, 'Cash', '229.23', '14.44', '243.67', 3, 13, 'No'),
+(7, '2018-12-26', 7, 'Credit', '405.70', '25.56', '431.26', 10, 9, 'No'),
+(8, '2018-10-06', 8, 'Credit', '314.89', '19.84', '334.73', 4, 13, 'Yes'),
+(9, '2019-05-08', 9, 'Credit', '423.94', '26.71', '450.65', 5, 6, 'Yes'),
+(10, '2019-01-11', 10, 'Cash', '286.01', '18.02', '304.03', 11, 18, 'No'),
+(11, '2018-07-08', 11, 'Credit', '428.15', '26.97', '455.12', 6, 17, 'No'),
+(12, '2018-08-28', 12, 'Cash', '356.76', '22.48', '379.24', 18, 13, 'No'),
+(13, '2019-10-06', 13, 'Credit', '387.22', '24.39', '411.61', 3, 14, 'Yes'),
+(14, '2019-01-05', 14, 'Cash', '37.73', '2.38', '40.11', 9, 16, 'Yes'),
+(15, '2019-04-25', 15, 'Credit', '111.02', '6.99', '118.01', 10, 9, 'No'),
+(16, '2019-07-29', 16, 'Credit', '245.87', '15.49', '261.36', 15, 14, 'No'),
+(17, '2018-12-30', 17, 'Credit', '252.90', '15.93', '268.83', 6, 13, 'Yes'),
+(18, '2019-02-13', 18, 'Cash', '471.68', '29.72', '501.40', 20, 18, 'No'),
+(19, '2018-05-25', 19, 'Cash', '425.10', '26.78', '451.88', 20, 11, 'No'),
+(20, '2018-01-17', 20, 'Cash', '327.12', '20.61', '347.73', 5, 14, 'Yes');
 
 -- --------------------------------------------------------
 
