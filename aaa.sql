@@ -199,26 +199,26 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`ProductNumber`, `ProductName`, `ProductType`, `UnitPrice`, `QuantityOnHand`) VALUES
-(1, 'Shoes', 'CI', 0, 70),
-(2, 'Boxers', 'ROP', 0, 11),
-(3, 'Shirt', 'AXARW', 0, 51),
-(4, 'Beanie', 'UBSH', 0, 55),
-(5, 'Jacket', 'PRGO', 0, 66),
-(6, 'Jacket', 'SFS', 0, 62),
-(7, 'Bracelet', 'FBM', 0, 70),
-(8, 'Jacket', 'LBRDK', 0, 57),
-(9, 'Hat', 'GGTB', 0, 95),
-(10, 'Hat', 'MAMS', 0, 50),
-(11, 'Tracksuit', 'ARI', 0, 48),
-(12, 'Track Shoe', 'CLF', 0, 27),
-(13, 'Hat', 'ETO', 0, 85),
-(14, 'Sweatpants', 'XLNX', 0, 50),
-(15, 'Shirt Long-sleeve', 'LGF.B', 0, 68),
-(16, 'Shirt', 'TSM', 0, 74),
-(17, 'Jacket', 'CHH', 0, 99),
-(18, 'Tracksuit', 'BXS', 0, 64),
-(19, 'Sweatpants', 'UCBA', 0, 80),
-(20, 'Bracelet', 'SLG', 0, 7);
+(1, 'Shoes', 'CI', 40, 70),
+(2, 'Boxers', 'ROP', 10, 11),
+(3, 'Shirt', 'AXARW', 15, 51),
+(4, 'Beanie', 'UBSH', 20, 55),
+(5, 'Jacket', 'PRGO', 100, 66),
+(6, 'Socks', 'SFS', 5, 62),
+(7, 'Baseball', 'FBM', 3, 70),
+(8, 'Soccer Ball', 'LBRDK', 30, 57),
+(9, 'Hat', 'GGTB', 16, 95),
+(10, 'Cleats', 'MAMS', 60, 50),
+(11, 'Tracksuit', 'ARI', 45, 48),
+(12, 'Sweater', 'CLF', 35, 27),
+(13, 'Bat', 'ETO', 50, 85),
+(14, 'Sweatpants', 'XLNX', 25, 50),
+(15, 'Shirt Long-sleeve', 'LGF.B', 30, 68),
+(16, 'Shirt', 'TSM', 15, 74),
+(17, 'Shorts', 'CHH', 17, 99),
+(18, 'Sports Bag', 'BXS', 28, 64),
+(19, 'Racket', 'UCBA', 120, 80),
+(20, 'Bottle', 'SLG', 3, 7);
 
 -- --------------------------------------------------------
 
@@ -231,7 +231,7 @@ CREATE TABLE `vendor` (
   `VendorName` varchar(50) DEFAULT NULL,
   `ProductName` varchar(50) DEFAULT NULL,
   `ProductNumber` int(11) NOT NULL,
-  `Phone` int(11) DEFAULT NULL
+  `Phone` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
