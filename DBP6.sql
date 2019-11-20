@@ -27,3 +27,12 @@ SELECT LastName, FirstName FROM customer WHERE CustomerID IN (SELECT DISTINCT Cu
 
 Which product is selling a quantity of more than 7, theoreticallly we can raise the price for that specific product and get higher margins.
 SELECT ProductName, ProductType, UnitPrice FROM product WHERE ProductNumber IN (SELECT DISTINCT ProductNumber FROM invoice_product WHERE Quantity > 7) 
+
+
+SELECT DonationNumber, DonationAmount, Charity
+FROM donation
+WHERE DonationAmount >
+ (SELECT AVG(DonationAmount)
+ FROM donation
+ WHERE Chartiy = Redcross)
+ORDER BY Charity, DonationAmount
