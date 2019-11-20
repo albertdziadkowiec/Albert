@@ -1,3 +1,4 @@
+
 -- Table structure for table `customer`
 --
 
@@ -223,26 +224,26 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`ProductNumber`, `ProductName`, `ProductType`, `UnitPrice`, `QuantityOnHand`) VALUES
-(1, 'Shoes', 'CI', 40, 70),
-(2, 'Boxers', 'ROP', 10, 11),
-(3, 'Shirt', 'AXARW', 15, 51),
-(4, 'Beanie', 'UBSH', 20, 55),
-(5, 'Jacket', 'PRGO', 100, 66),
-(6, 'Socks', 'SFS', 5, 62),
-(7, 'Baseball', 'FBM', 3, 70),
-(8, 'Soccer Ball', 'LBRDK', 30, 57),
-(9, 'Hat', 'GGTB', 16, 95),
-(10, 'Cleats', 'MAMS', 60, 50),
-(11, 'Tracksuit', 'ARI', 45, 48),
-(12, 'Sweater', 'CLF', 35, 27),
-(13, 'Bat', 'ETO', 50, 85),
-(14, 'Sweatpants', 'XLNX', 25, 50),
-(15, 'Tennis Balls', 'LGF.B', 30, 68),
-(16, 'Mouth Piece', 'TSM', 15, 74),
-(17, 'Shorts', 'CHH', 17, 99),
-(18, 'Sports Bag', 'BXS', 28, 64),
-(19, 'Racket', 'UCBA', 120, 80),
-(20, 'Bottle', 'SLG', 3, 7);
+(1, 'Shoes', 'Footwear', 40, 70),
+(2, 'Boxers', 'Clothing', 10, 11),
+(3, 'Shirt', 'Clothing', 15, 51),
+(4, 'Beanie', 'Accessories', 20, 55),
+(5, 'Jacket', 'Clothing', 100, 66),
+(6, 'Socks', 'Clothing', 5, 62),
+(7, 'Baseball', 'Equipment', 3, 70),
+(8, 'Soccer Ball', 'Equipment', 30, 57),
+(9, 'Hat', 'Accessories', 16, 95),
+(10, 'Cleats', 'Footwear', 60, 50),
+(11, 'Tracksuit', 'Clothing', 45, 48),
+(12, 'Sweater', 'Clothing', 35, 27),
+(13, 'Bat', 'Equipment', 50, 85),
+(14, 'Sweatpants', 'Clothing', 25, 50),
+(15, 'Tennis Balls', 'Equipment', 30, 68),
+(16, 'Mouth Piece', 'Accessories', 15, 74),
+(17, 'Shorts', 'Clothing', 17, 99),
+(18, 'Sports Bag', 'Accessories', 28, 64),
+(19, 'Racket', 'Equipment', 120, 80),
+(20, 'Bottle', 'Accessories', 3, 7);
 
 -- --------------------------------------------------------
 
@@ -264,25 +265,25 @@ CREATE TABLE `vendor` (
 
 INSERT INTO `vendor` (`VendorID`, `VendorName`, `ProductName`, `ProductNumber`, `Phone`) VALUES
 (1, 'Nike', 'Shoes', 1, '914-237-9148'),
-(2, 'Adidas', 'Boxers', 2, '914-237-9148'),
-(3, 'Champs', 'Shirt', 3, '914-237-9148'),
-(4, 'Columbia', 'Beanie', 4, '914-237-9148'),
-(5, 'Dryworld', 'Jacket', 5, '914-237-9148'),
-(6, 'Dunlop', 'Socks', 6, '914-237-9148'),
-(7, 'Erke', 'Baseball', 7, '914-237-9148'),
-(8, 'Dynamic', 'Soccer Ball', 8, '914-237-9148'),
-(9, 'Head', 'Hat', 9, '914-237-9148'),
-(10, 'ISC', 'Cleats', 10, '914-237-9148'),
-(11, 'Grand', 'Tracksuit', 11, '914-237-9148'),
-(12, 'Joma', 'Sweater', 12, '914-237-9148'),
-(13, 'Kappa', 'Bat', 13, '914-237-9148'),
-(14, 'Jako', 'Sweatpants', 14, '914-237-9148'),
-(15, 'Karbu', 'Tennis Balls', 15, '914-237-9148'),
-(16, 'Lacoste', 'Mouth Piece', 16, '914-237-9148'),
-(17, 'League', 'Shorts', 17, '914-237-9148'),
-(18, 'Kukri', 'Sports Bag', 18, '914-237-9148'),
-(19, 'Lotto', 'Racket', 19, '914-237-9148'),
-(20, 'Mizuno', 'Bottle', 20, '914-237-9148');
+(2, 'Adidas', 'Boxers', 2, '224-772-8365'),
+(3, 'Champs', 'Shirt', 3, '847-853-9845'),
+(4, 'Columbia', 'Beanie', 4, '630-425-9824'),
+(5, 'Dryworld', 'Jacket', 5, '224-875-9104'),
+(6, 'Dunlop', 'Socks', 6, '914-345-8744'),
+(7, 'Erke', 'Baseball', 7, '630-908-2348'),
+(8, 'Dynamic', 'Soccer Ball', 8, '914-789-0934'),
+(9, 'Head', 'Hat', 9, '224-237-9178'),
+(10, 'ISC', 'Cleats', 10, '914-762-9102'),
+(11, 'Grand', 'Tracksuit', 11, '914-870-2538'),
+(12, 'Joma', 'Sweater', 12, '224-539-8877'),
+(13, 'Kappa', 'Bat', 13, '914-777-9199'),
+(14, 'Jako', 'Sweatpants', 14, '914-899-9990'),
+(15, 'Karbu', 'Tennis Balls', 15, '911-237-0000'),
+(16, 'Lacoste', 'Mouth Piece', 16, '224-098-1111'),
+(17, 'League', 'Shorts', 17, '914-111-0987'),
+(18, 'Kukri', 'Sports Bag', 18, '847-237-1010'),
+(19, 'Lotto', 'Racket', 19, '914-122-1223'),
+(20, 'Mizuno', 'Bottle', 20, '847-999-8897');
 
 --
 -- Indexes for dumped tables
