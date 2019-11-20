@@ -26,4 +26,4 @@ SELECT LastName, FirstName FROM customer WHERE CustomerID IN (SELECT DISTINCT Cu
 
 
 Which product is selling the most, theoreticallly we can raise the price for that specific product and get higher margins.
-SELECT LastName, FirstName FROM customer WHERE CustomerID IN (SELECT DISTINCT CustomerID FROM invoice WHERE total > 300)
+SELECT ProductName, ProductType, UnitPrice FROM product WHERE ProductNumber IN (SELECT DISTINCT ProductNumber FROM invoice_product WHERE total > 300)
