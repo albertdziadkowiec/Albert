@@ -25,5 +25,5 @@ This shows us which customers had invoices over $300, with this information we c
 SELECT LastName, FirstName FROM customer WHERE CustomerID IN (SELECT DISTINCT CustomerID FROM invoice WHERE total > 300)
 
 
-Which product is selling the most, theoreticallly we can raise the price for that specific product and get higher margins.
-SELECT ProductName, ProductType, UnitPrice FROM product WHERE ProductNumber IN (SELECT DISTINCT ProductNumber FROM invoice_product WHERE total > 300)
+Which product is selling a quantity of more than 7, theoreticallly we can raise the price for that specific product and get higher margins.
+SELECT ProductName, ProductType, UnitPrice FROM product WHERE ProductNumber IN (SELECT DISTINCT ProductNumber FROM invoice_product WHERE Quantity > 7) 
