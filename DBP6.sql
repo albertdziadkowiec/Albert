@@ -21,4 +21,5 @@ ProjectName, FirstName, LastName, HoursWorked EMPLOYEE AS E JOIN ASSIGNMENT AS A
 E.EmployeeNumber = A.EmployeeNumber JOIN PROJECT AS P ON
 ORDER BY P.ProjectID, A.EmployeeNumber;
 
+This shows us which customers had invoices over $300, with this information we can send these customers benefits for their loyalty.
 SELECT LastName, FirstName FROM customer WHERE CustomerID IN (SELECT DISTINCT CustomerID FROM invoice WHERE total > 300)
